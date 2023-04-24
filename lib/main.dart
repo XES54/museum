@@ -10,16 +10,22 @@ class MuseumApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "museum", // in logical pixels
+      title: "museum",
       theme: ThemeData(primaryColor: const Color.fromARGB(218, 4, 218, 54)),
       home: const Artwork(),
     );
   }
 }
 
-class Artwork extends StatelessWidget {
+class Artwork extends StatefulWidget {
   const Artwork({super.key});
 
+  @override
+  State<Artwork> createState() => _ArtworkState();
+}
+
+class _ArtworkState extends State<Artwork> {
+  get isFavorite => false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +39,7 @@ class Artwork extends StatelessWidget {
             const Icon(
               Icons.favorite,
               size: 100,
-              color: Color.fromARGB(255, 255, 255, 255),
+              color: Color.fromARGB(190, 255, 255, 255),
             ),
           ]),
           const Text('Mona Lisa',

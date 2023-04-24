@@ -28,8 +28,14 @@ class Artwork extends StatelessWidget {
           backgroundColor: const Color.fromARGB(255, 54, 16, 0),
         ),
         body: Column(children: [
-          const Icon(Icons.favorite),
-          Image.asset('assets/images/Mona_Lisa.jpg'),
+          Stack(children: [
+            Image.asset('assets/images/Mona_Lisa.jpg'),
+            const Icon(
+              Icons.favorite,
+              size: 100,
+              color: Color.fromARGB(191, 247, 247, 247),
+            ),
+          ]),
           const Text('Mona Lisa',
               style: TextStyle(
                   fontSize: 30,

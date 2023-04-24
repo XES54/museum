@@ -28,12 +28,12 @@ class Artwork extends StatelessWidget {
           backgroundColor: const Color.fromARGB(255, 54, 16, 0),
         ),
         body: Column(children: [
-          Stack(children: [
+          Stack(alignment: Alignment.center, children: [
             Image.asset('assets/images/Mona_Lisa.jpg'),
             const Icon(
               Icons.favorite,
               size: 100,
-              color: Color.fromARGB(191, 247, 247, 247),
+              color: Color.fromARGB(255, 255, 255, 255),
             ),
           ]),
           const Text('Mona Lisa',
@@ -48,6 +48,9 @@ class Artwork extends StatelessWidget {
                 color: Color.fromARGB(255, 54, 16, 0),
                 fontWeight: FontWeight.bold,
               )),
+          const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [Icon(Icons.article), Icon(Icons.favorite)])
         ]));
   }
 }

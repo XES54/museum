@@ -81,10 +81,10 @@ flutter:
          - asset: assets\fonts\merrinweather\Merriweather-BlackItalic.ttf
          - asset: assets\fonts\merrinweather\Merriweather-Bold.ttf
          - asset: assets\fonts\merrinweather\Merriweather-BoldItalic.ttf
-         - asset : assets\fonts\merrinweather\Merriweather-Italic.ttf
-         - asset : assets\fonts\merrinweather\Merriweather-Light.ttf
-         - asset : assets\fonts\merrinweather\Merriweather-LightItalic.ttf
-         - asset : assets\fonts\merrinweather\Merriweather-Regular.ttf
+         - asset: assets\fonts\merrinweather\Merriweather-Italic.ttf
+         - asset: assets\fonts\merrinweather\Merriweather-Light.ttf
+         - asset: assets\fonts\merrinweather\Merriweather-LightItalic.ttf
+         - asset: assets\fonts\merrinweather\Merriweather-Regular.ttf
 
         
   #       - asset: fonts/Schyler-Italic.ttf

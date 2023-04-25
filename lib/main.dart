@@ -25,7 +25,12 @@ class Artwork extends StatefulWidget {
 }
 
 class _ArtworkState extends State<Artwork> {
-  get isFavorite => false;
+  bool _isFavorite = false;
+  bool _showDescription = false;
+  var snackbar = const SnackBar(
+    content: Text('Oeuvre ajoutée à vos favoris'),
+    duration: Duration(seconds: 1),
+  );
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,10 +41,12 @@ class _ArtworkState extends State<Artwork> {
         body: Column(children: [
           Stack(alignment: Alignment.center, children: [
             Image.asset('assets/images/Mona_Lisa.jpg'),
-            const Icon(
+            Icon(
               Icons.favorite,
               size: 100,
-              color: Color.fromARGB(190, 255, 255, 255),
+              color: _isFavorite
+                  ? const Color.fromARGB(255, 238, 2, 2)
+                  : const Color.fromARGB(190, 255, 255, 255),
             ),
           ]),
           const Text('Mona Lisa',
@@ -54,9 +61,29 @@ class _ArtworkState extends State<Artwork> {
                 color: Color.fromARGB(255, 54, 16, 0),
                 fontWeight: FontWeight.bold,
               )),
-          const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [Icon(Icons.article), Icon(Icons.favorite)])
+          Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
+            IconButton(
+                icon: const Icon(Icons.article),
+                onPressed: () {
+                  setState(() {
+                    _showDescription = !_showDescription;
+                  });
+                }),
+            IconButton(
+              icon: Icon(
+                _isFavorite ? Icons.favorite : Icons.favorite_border_sharp,
+                color: const Color.fromARGB(255, 54, 16, 0),
+              ),
+              onPressed: () {
+                if (!_isFavorite) {
+                  ScaffoldMessenger.of(context).showSnackBar(snackbar);
+                }
+                setState(() {
+                  _isFavorite = !_isFavorite;
+                });
+              },
+            )
+          ]),
         ]));
   }
 }

@@ -56,7 +56,7 @@ quotidiennement""";
         body: Column(children: [
           Center(
             child: SizedBox(
-              height: 630,
+              height: 635,
               child: Stack(alignment: Alignment.center, children: [
                 Image.asset('assets/images/Mona_Lisa.jpg'),
                 !_showDescription
